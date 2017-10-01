@@ -11,7 +11,7 @@ public class Sequence_first {
 
     public Sequence_first(byte[] v) {
         this.sequence_second_numbers = v;
-        while (compare_result != true | i_before >= 100) {
+        while (compare_result != true ) {
             if ( i_before>=100 ) return;
             generate_sequence_before_compare(sequence_second_numbers, sequence_before);
             compare_sequence(compare_sequence_array, sequence_second_numbers);
