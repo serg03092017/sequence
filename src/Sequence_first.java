@@ -12,7 +12,7 @@ public class Sequence_first {
     public Sequence_first(byte[] v) {
         this.sequence_second_numbers = v;
         while (compare_result != true ) {
-            if ( i_after>=99 ) return;
+            if ( i_after>=10000 ) return;
             generate_sequence_before_compare(sequence_second_numbers, sequence_before);
             compare_sequence(compare_sequence_array, sequence_second_numbers);
             if (compare_result == true) {System.out.println("index="+current_number_find); return;}
@@ -53,26 +53,8 @@ public class Sequence_first {
                     result=false;
                     break;
                 }
-
             }
-            if (result==true) {this.current_number_find=i+1;
-                /*
-                int number_in_sequence= i+1;
-                int start_number = get_Number_for_compare();
-                int index =0;
-                while(index < number_in_sequence){
-                    int digit_degree = 1;
-                    int count_digit = 0;
-                    while (start_number / digit_degree > 0) {
-                        digit_degree *= 10;
-                        count_digit++;
-                        index = index+1;
-                    }
-                    start_number++;
-                }
-                current_number_find=start_number;
-                break;
-                */
+            if (result==true) {this.current_number_find=i+i_compare;
                 break;
             }
         }
