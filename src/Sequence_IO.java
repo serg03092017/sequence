@@ -26,7 +26,6 @@ public class Sequence_IO {
 
                         for (int i = 0; i <s.length(); i++) {
                             result[i] = Byte.parseByte(Character.toString(s.charAt(i)));
-                            //s.charAt(i);// нужен получить число а не номер символа
                             if ((int) (s.charAt(i)) < 48 || (int) (s.charAt(i)) > 57) {
                                 System.err.println("Invalid Digit");
                                 //System.out.println("num=" + (int) (c));
