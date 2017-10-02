@@ -3,6 +3,7 @@ public class Sequence_first {
     int i_after = 1;
     int i_compare = 1;
     int current_number_find;
+    int number_str=0;
 
     byte [] sequence_second_numbers;
     byte [] sequence_before=null;
@@ -54,8 +55,25 @@ public class Sequence_first {
                     break;
                 }
             }
-            if (result==true) {this.current_number_find=i+i_compare;
+            if (result==true) {this.current_number_find=(number_str-a.length+1)+i;
                 break;
+                /*
+                int number_in_sequence= i+1;
+                int start_number = get_Number_for_compare();
+                int index =0;
+                while(index < number_in_sequence){
+                    int digit_degree = 1;
+                    int count_digit = 0;
+                    while (start_number / digit_degree > 0) {
+                        digit_degree *= 10;
+                        count_digit++;
+                        index = index+1;
+                    }
+                    start_number++;
+                }
+                current_number_find=start_number;
+                break;
+                */
             }
         }
         this.compare_result = result;
@@ -85,6 +103,7 @@ public class Sequence_first {
             else{
                 while(digit_degree > 1){
                 s = s + (i%digit_degree)/(digit_degree/10);
+                this.number_str=number_str+1;
                 digit_degree /= 10;
                 }
             }
