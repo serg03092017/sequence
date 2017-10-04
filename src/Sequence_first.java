@@ -15,7 +15,7 @@ public class Sequence_first {
         while (compare_result != true ) {
             generate_sequence_before_compare(sequence_second_numbers, sequence_before);
             compare_sequence(compare_sequence_array, sequence_second_numbers);
-            if (compare_result == true) {System.out.println("first place in sequence = "+current_number_find); return;}
+            if (compare_result == true) {System.out.print(current_number_find); return;}
             else {generate_sequence_after_compare(sequence_second_numbers, compare_sequence_array);}
             if ( number_str == 2147483647 ) {System.out.println("index not found or out of 2^32/2-1"); return;}
         }
