@@ -28,7 +28,6 @@ public class Sequence_IO {
                             result[i] = Byte.parseByte(Character.toString(s.charAt(i)));
                             if ((int) (s.charAt(i)) < 48 || (int) (s.charAt(i)) > 57) {
                                 System.err.println("Invalid Digit");
-                                //System.out.println("num=" + (int) (c));
                                 return null;
                             }
                         }
