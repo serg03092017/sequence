@@ -13,11 +13,11 @@ public class Sequence_first {
     public Sequence_first(byte[] v) {
         this.sequence_second_numbers = v;
         while (compare_result != true ) {
-            if ( i_after>=10000 ) return;
             generate_sequence_before_compare(sequence_second_numbers, sequence_before);
             compare_sequence(compare_sequence_array, sequence_second_numbers);
-            if (compare_result == true) {System.out.println("index="+current_number_find); return;}
+            if (compare_result == true) {System.out.println("first place in sequence = "+current_number_find); return;}
             else {generate_sequence_after_compare(sequence_second_numbers, compare_sequence_array);}
+            if ( number_str == 2147483647 ) {System.out.println("index not found or out of 2^32/2-1"); return;}
         }
     }
 
@@ -57,23 +57,6 @@ public class Sequence_first {
             }
             if (result==true) {this.current_number_find=(number_str-a.length+1)+i;
                 break;
-                /*
-                int number_in_sequence= i+1;
-                int start_number = get_Number_for_compare();
-                int index =0;
-                while(index < number_in_sequence){
-                    int digit_degree = 1;
-                    int count_digit = 0;
-                    while (start_number / digit_degree > 0) {
-                        digit_degree *= 10;
-                        count_digit++;
-                        index = index+1;
-                    }
-                    start_number++;
-                }
-                current_number_find=start_number;
-                break;
-                */
             }
         }
         this.compare_result = result;
@@ -90,8 +73,7 @@ public class Sequence_first {
                 s = s + in_sequence[count_in];
             }
         }
-        //if (s.length>=1000) return;
-        while (s.length()<100) {
+        while (s.length() <= sequence_second_numbers.length*4) {
 
             int digit_degree = 1;
             int count_digit = 0;
@@ -99,12 +81,13 @@ public class Sequence_first {
                 digit_degree *= 10;
                 count_digit++;
             }
-            if ((s.length() + count_digit >= 100)) {break;}
+            if ((s.length() + count_digit > sequence_second_numbers.length*4)) {break;}
             else{
                 while(digit_degree > 1){
-                s = s + (i%digit_degree)/(digit_degree/10);
-                this.number_str=number_str+1;
-                digit_degree /= 10;
+                    if ( number_str == 2147483647 ) {s = s + (i%digit_degree)/(digit_degree/10); break;}
+                    this.number_str=number_str+1;
+                    s = s + (i%digit_degree)/(digit_degree/10);
+                    digit_degree /= 10;
                 }
             }
             i++;
@@ -130,7 +113,7 @@ public class Sequence_first {
             }
         }
         String s1=s;
-        while (s1.length()>50){
+        while (s1.length() >= sequence_second_numbers.length*2){
 
             int digit_degree = 1;
             int count_digit = 0;
@@ -138,7 +121,7 @@ public class Sequence_first {
                 digit_degree *= 10;
                 count_digit++;
             }
-            if ((s1.length() - count_digit < 50)) {break;}
+            if ((s1.length() - count_digit < sequence_second_numbers.length*2)) {break;}
             while(digit_degree > 1){
                 s1=s1.substring(1,s1.length());
                 digit_degree /= 10;

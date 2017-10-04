@@ -1,5 +1,6 @@
 import java.io.*;
 import java.lang.*;
+
 public class Sequence_processing {
     public static void main (String args[]) {
         Sequence_IO num1 = new Sequence_IO(new BufferedReader(new InputStreamReader(System.in)));
@@ -11,7 +12,7 @@ public class Sequence_processing {
             if (v.length == 0) return;
 
             System.out.println();
-            System.out.println("length=" + v.length);
+            //System.out.println("length=" + v.length);
 
             Sequence_first push = new Sequence_first(v);
     }
